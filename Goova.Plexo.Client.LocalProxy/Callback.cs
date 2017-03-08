@@ -18,11 +18,11 @@ namespace Goova.Plexo.Client.LocalProxy
                 binding.CloseTimeout = TimeSpan.FromSeconds(timeout);
                 binding.SendTimeout = TimeSpan.FromSeconds(timeout);
                 binding.ReceiveTimeout = TimeSpan.FromSeconds(timeout);
-                if (ElSwitch.Local.Proxy.Properties.Settings.Default.CallbackUrl.StartsWith("https"))
+                if (Local.Proxy.Properties.Settings.Default.CallbackUrl.StartsWith("https"))
                     binding.Security.Mode = WebHttpSecurityMode.Transport;
 
                 ServiceEndpoint svc = new ServiceEndpoint(ContractDescription.GetContract(typeof(ICallback)),
-                    binding, new EndpointAddress(ElSwitch.Local.Proxy.Properties.Settings.Default.CallbackUrl));
+                    binding, new EndpointAddress(Local.Proxy.Properties.Settings.Default.CallbackUrl));
                 WebHttpBehavior behavior = new WebHttpBehavior
                 {
                     DefaultBodyStyle = WebMessageBodyStyle.Bare,
@@ -42,7 +42,7 @@ namespace Goova.Plexo.Client.LocalProxy
         public async Task<ClientResponse> Instrument(IntrumentCallback instrument)
         {
             ClientResponse r=await Channel.Instrument(instrument);
-            r.Client = ElSwitch.Local.Proxy.Properties.Settings.Default.ClientName;
+            r.Client = Local.Proxy.Properties.Settings.Default.ClientName;
             return r;
         }
     }

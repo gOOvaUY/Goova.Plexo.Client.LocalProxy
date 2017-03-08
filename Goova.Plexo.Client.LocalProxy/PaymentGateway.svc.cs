@@ -6,7 +6,7 @@ namespace Goova.Plexo.Client.LocalProxy
 {
     public class PaymentGateway : IPaymentGateway
     {
-        PaymentGatewayClient _cl = PaymentGatewayClientFactory.GetClient(ElSwitch.Local.Proxy.Properties.Settings.Default.ClientName);
+        PaymentGatewayClient _cl = PaymentGatewayClientFactory.GetClient(Local.Proxy.Properties.Settings.Default.ClientName);
 
         public Task<ServerResponse<string>> Authorize(Authorization authorization)
         {
