@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Web;
 using System.Threading.Tasks;
-using System.Web;
-using Goova.ElSwitch.Client.SDK;
-using Goova.ElSwitch.Client.SDK.Logging;
 
-namespace Goova.ElSwitch.Local.Proxy
+namespace Goova.Plexo.Client.LocalProxy
 {
     internal class Callback : ClientBase<ICallback>, ICallback //This will be loaded by reflection
     {
@@ -23,11 +18,11 @@ namespace Goova.ElSwitch.Local.Proxy
                 binding.CloseTimeout = TimeSpan.FromSeconds(timeout);
                 binding.SendTimeout = TimeSpan.FromSeconds(timeout);
                 binding.ReceiveTimeout = TimeSpan.FromSeconds(timeout);
-                if (Properties.Settings.Default.CallbackUrl.StartsWith("https"))
+                if (ElSwitch.Local.Proxy.Properties.Settings.Default.CallbackUrl.StartsWith("https"))
                     binding.Security.Mode = WebHttpSecurityMode.Transport;
 
                 ServiceEndpoint svc = new ServiceEndpoint(ContractDescription.GetContract(typeof(ICallback)),
-                    binding, new EndpointAddress(Properties.Settings.Default.CallbackUrl));
+                    binding, new EndpointAddress(ElSwitch.Local.Proxy.Properties.Settings.Default.CallbackUrl));
                 WebHttpBehavior behavior = new WebHttpBehavior
                 {
                     DefaultBodyStyle = WebMessageBodyStyle.Bare,
@@ -47,7 +42,7 @@ namespace Goova.ElSwitch.Local.Proxy
         public async Task<ClientResponse> Instrument(IntrumentCallback instrument)
         {
             ClientResponse r=await Channel.Instrument(instrument);
-            r.Client = Properties.Settings.Default.ClientName;
+            r.Client = ElSwitch.Local.Proxy.Properties.Settings.Default.ClientName;
             return r;
         }
     }
