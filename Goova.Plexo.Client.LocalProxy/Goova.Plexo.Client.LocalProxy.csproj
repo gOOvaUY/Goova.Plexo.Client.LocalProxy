@@ -63,10 +63,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Goova.Plexo.Client.SDK\SecureCallback.svc">
-      <Link>SecureCallback.svc</Link>
-    </Content>
     <Content Include="PaymentGateway.svc" />
+    <Content Include="SecureCallback.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

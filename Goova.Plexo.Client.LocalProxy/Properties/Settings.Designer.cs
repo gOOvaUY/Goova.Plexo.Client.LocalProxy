@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Goova.Plexo.Local.Proxy.Properties {
+namespace Goova.Plexo.Client.LocalProxy.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -38,6 +38,15 @@ namespace Goova.Plexo.Local.Proxy.Properties {
         public string ClientName {
             get {
                 return ((string)(this["ClientName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120")]
+        public int Timeout {
+            get {
+                return ((int)(this["Timeout"]));
             }
         }
     }
