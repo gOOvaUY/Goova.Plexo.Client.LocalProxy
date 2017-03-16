@@ -34,7 +34,16 @@ namespace Goova.Plexo.Client.LocalProxy.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RedPagos")]
+        [global::System.Configuration.DefaultSettingValueAttribute("120")]
+        public int Timeout {
+            get {
+                return ((int)(this["Timeout"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TestClient")]
         public string ClientName {
             get {
                 return ((string)(this["ClientName"]));
@@ -43,10 +52,10 @@ namespace Goova.Plexo.Client.LocalProxy.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("120")]
-        public int Timeout {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int CallbackType {
             get {
-                return ((int)(this["Timeout"]));
+                return ((int)(this["CallbackType"]));
             }
         }
     }

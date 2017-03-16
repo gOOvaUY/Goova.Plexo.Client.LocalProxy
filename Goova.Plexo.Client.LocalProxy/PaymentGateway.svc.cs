@@ -4,12 +4,15 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using System.Web;
+using Goova.Plexo.Client.LocalProxy.Logging;
 using Goova.Plexo.Client.SDK;
 
 namespace Goova.Plexo.Client.LocalProxy
 {
     public class PaymentGateway : IPaymentGateway
     {
+        private static readonly ILog Logger = LogProvider.GetCurrentClassLogger();
+
         private readonly PaymentGatewayClient _cl = PaymentGatewayClientFactory.GetClient(Properties.Settings.Default.ClientName);
 
         public async Task<ServerResponse<string>> Authorize(Authorization authorization)
@@ -34,24 +37,33 @@ namespace Goova.Plexo.Client.LocalProxy
 
         private async Task<ServerResponse<T>> OnlyRunOnIntranet<T>(Func<Task<ServerResponse<T>>> func)
         {
-            string ip = null;
-            MessageProperties prop = OperationContext.Current?.IncomingMessageProperties;
-            if (prop != null)
+            try
             {
-                if (prop.ContainsKey(RemoteEndpointMessageProperty.Name))
+                string ip = null;
+                MessageProperties prop = OperationContext.Current?.IncomingMessageProperties;
+                if (prop != null)
                 {
-                    RemoteEndpointMessageProperty endpoint = prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
-                    if (endpoint != null)
-                        ip = endpoint.Address;
+                    if (prop.ContainsKey(RemoteEndpointMessageProperty.Name))
+                    {
+                        RemoteEndpointMessageProperty endpoint = prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                        if (endpoint != null)
+                            ip = endpoint.Address;
+                    }
                 }
+                if (ip == null)
+                    ip = HttpContext.Current.Request.UserHostAddress;
+                if (ip == null)
+                    return new ServerResponse<T> { ErrorMessage = "Unable to get incoming ip", ResultCode = ResultCodes.SystemError };
+                if (IsIntranet(ip))
+                    return await func();
+                return new ServerResponse<T> { ErrorMessage = "Not allowed to request from Internet", ResultCode = ResultCodes.Forbidden };
             }
-            if (ip == null)
-                ip = HttpContext.Current.Request.UserHostAddress;
-            if (ip == null)
-                return new ServerResponse<T> {ErrorMessage = "Unable to get incoming ip", ResultCode = ResultCodes.SystemError};
-            if (IsIntranet(ip))
-                return await func();
-            return new ServerResponse<T> {ErrorMessage = "Not allowed to request from Internet", ResultCode = ResultCodes.Forbidden};
+            catch (Exception e)
+            {
+                Logger.ErrorException("System Error",e);
+                return new ServerResponse<T> {ErrorMessage = "System Error, see error log for more detailes", ResultCode = ResultCodes.SystemError};
+            }
+
         }
 
         private bool IsIntranet(string ip)
