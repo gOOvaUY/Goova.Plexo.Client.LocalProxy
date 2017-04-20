@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Goova.ElSwitch.Local.Proxy.PaymentGateway" CodeBehind="PaymentGateway.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Goova.Plexo.Client.LocalProxy.Library.PaymentGateway" %>
