@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Goova.Plexo.Client.LocalProxy</RootNamespace>
-    <AssemblyName>Goova.Plexo.Client.LocalProxy</AssemblyName>
+    <RootNamespace>Plexo.Client.LocalProxy</RootNamespace>
+    <AssemblyName>Plexo.Client.LocalProxy</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -100,21 +100,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.JsonDataContractSerializer\Goova.JsonDataContractSerializer.csproj">
+    <ProjectReference Include="..\Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Goova.JsonDataContractSerializer\Goova.JsonDataContractSerializer.csproj">
       <Project>{f6b3bbd1-a222-43e6-af48-b03b71b69cf2}</Project>
       <Name>Goova.JsonDataContractSerializer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.LocalProxy.Library.csproj">
+    <ProjectReference Include="..\Plexo.Client.LocalProxy.Library\Plexo.Client.LocalProxy.Library\Plexo.Client.LocalProxy.Library.csproj">
       <Project>{5683d060-ddc0-4780-a5d5-5108905cf34e}</Project>
-      <Name>Goova.Plexo.Client.LocalProxy.Library</Name>
+      <Name>Plexo.Client.LocalProxy.Library</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.Plexo.Client.SDK.csproj">
+    <ProjectReference Include="..\Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Plexo.Client.SDK.csproj">
       <Project>{e34408a4-6237-472b-a91e-bbbb7cc204e6}</Project>
-      <Name>Goova.Plexo.Client.SDK</Name>
+      <Name>Plexo.Client.SDK</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.Plexo.Models\Goova.Plexo.Models.csproj">
+    <ProjectReference Include="..\Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Plexo.Models\Plexo.Models.csproj">
       <Project>{0fdddba6-b05f-4c41-b5eb-18f91e34e160}</Project>
-      <Name>Goova.Plexo.Models</Name>
+      <Name>Plexo.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

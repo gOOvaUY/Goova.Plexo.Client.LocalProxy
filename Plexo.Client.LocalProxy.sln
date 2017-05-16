@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.Plexo.Client.LocalProxy", "Goova.Plexo.Client.LocalProxy\Goova.Plexo.Client.LocalProxy.csproj", "{8F0AF219-313D-4F5A-9072-6B75DE4AEA82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexo.Client.LocalProxy", "Plexo.Client.LocalProxy\Plexo.Client.LocalProxy.csproj", "{8F0AF219-313D-4F5A-9072-6B75DE4AEA82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{3935DCD2-A6CB-41A0-8184-DAB048A5FFC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.Plexo.Client.LocalProxy.Library", "Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.LocalProxy.Library.csproj", "{5683D060-DDC0-4780-A5D5-5108905CF34E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexo.Client.LocalProxy.Library", "Plexo.Client.LocalProxy.Library\Plexo.Client.LocalProxy.Library\Plexo.Client.LocalProxy.Library.csproj", "{5683D060-DDC0-4780-A5D5-5108905CF34E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.Plexo.Client.SDK", "Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.Plexo.Client.SDK.csproj", "{E34408A4-6237-472B-A91E-BBBB7CC204E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexo.Client.SDK", "Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Plexo.Client.SDK.csproj", "{E34408A4-6237-472B-A91E-BBBB7CC204E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.Plexo.Models", "Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.Plexo.Models\Goova.Plexo.Models.csproj", "{0FDDDBA6-B05F-4C41-B5EB-18F91E34E160}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plexo.Models", "Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Plexo.Models\Plexo.Models.csproj", "{0FDDDBA6-B05F-4C41-B5EB-18F91E34E160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.JsonDataContractSerializer", "Goova.Plexo.Client.LocalProxy.Library\Goova.Plexo.Client.SDK\Goova.JsonDataContractSerializer\Goova.JsonDataContractSerializer.csproj", "{F6B3BBD1-A222-43E6-AF48-B03B71B69CF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goova.JsonDataContractSerializer", "Plexo.Client.LocalProxy.Library\Plexo.Client.SDK\Goova.JsonDataContractSerializer\Goova.JsonDataContractSerializer.csproj", "{F6B3BBD1-A222-43E6-AF48-B03B71B69CF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
