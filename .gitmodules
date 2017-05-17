@@ -1,0 +1,3 @@
+[submodule "Plexo.Client.LocalProxy.Library"]
+	path = Plexo.Client.LocalProxy.Library
+	url = https://github.com/gOOvaUY/Plexo.Client.LocalProxy.Library
